@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Goniometer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 15px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Clinical Goniometer</h1>
+    </header>
+    <div class="container">
+        <h2>Measure Angles</h2>
+        <form id="goniometerForm">
+            <label for="angleInput">Enter Angle:</label>
+            <input type="number" id="angleInput" required>
+            <button type="submit">Calculate</button>
+        </form>
+        <div class="result" id="resultDiv" style="display:none;"></div>
+    </div>
+    <script>
+        document.getElementById('goniometerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const angle = document.getElementById('angleInput').value;
+            const resultDiv = document.getElementById('resultDiv');
+            resultDiv.textContent = `The angle you entered is: ${angle} degrees`;
+            resultDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
